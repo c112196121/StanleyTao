@@ -1,6 +1,6 @@
 ## 1.PERT/CPM 圖
 
-![PERT/CPM 圖]("PERT.png")
+![PERT/CPM 圖](PERT.png"PERT.png")
 
 ---
 ## 2.甘特圖
