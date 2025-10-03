@@ -1,28 +1,36 @@
-graph TD
-    subgraph "時程計算 (單位: 天)"
-        A[<b>1. 研擬計畫</b><br>ES:0, EF:1<br>LS:0, LF:1<br>D:1, S:0] --> B[<b>2. 任務分配</b><br>ES:1, EF:5<br>LS:1, LF:5<br>D:4, S:0]
-        A --> C[<b>3. 取得硬體</b><br>ES:1, EF:18<br>LS:58, LF:75<br>D:17, S:57]
-        B --> D[<b>4. 程式開發</b><br>ES:5, EF:75<br>LS:5, LF:75<br>D:70, S:0]
-        C --> E[<b>5. 安裝硬體</b><br>ES:18, EF:28<br>LS:75, LF:85<br>D:10, S:57]
-        D --> F[<b>6. 程式測試</b><br>ES:75, EF:105<br>LS:75, LF:105<br>D:30, S:0]
-        E --> G[<b>7. 撰寫使用手冊</b><br>ES:28, EF:53<br>LS:85, LF:110<br>D:25, S:57]
-        E --> H[<b>8. 轉換檔案</b><br>ES:28, EF:48<br>LS:90, LF:110<br>D:20, S:62]
-        F --> I[<b>9. 系統測試</b><br>ES:105, EF:130<br>LS:105, LF:130<br>D:25, S:0]
-        G --> J[<b>10. 使用者訓練</b><br>ES:53, EF:73<br>LS:110, LF:130<br>D:20, S:57]
-        H --> J
-        I --> K[<b>11. 使用者測試</b><br>ES:130, EF:155<br>LS:130, LF:155<br>D:25, S:0]
-        J --> K
-    end
+## 1.PERT/CPM 圖
 
-    linkStyle 0 stroke:red,stroke-width:2px;
-    linkStyle 2 stroke:red,stroke-width:2px;
-    linkStyle 4 stroke:red,stroke-width:2px;
-    linkStyle 7 stroke:red,stroke-width:2px;
-    linkStyle 10 stroke:red,stroke-width:2px;
+![PERT/CPM 圖](PERT.png "PERT/CPM 圖")
 
-    style A fill:#ffcccc
-    style B fill:#ffcccc
-    style D fill:#ffcccc
-    style F fill:#ffcccc
-    style I fill:#ffcccc
-    style K fill:#ffcccc
+---
+## 2.甘特圖
+
+```mermaid
+gantt
+    title 工作分解結構清單
+    dateFormat  YYYY-MM-DD
+    section 項目與說明
+    研擬計畫         :a1, 2025-09-30, 1d
+    任務分配         :a2, after a1, 4d
+    取得硬體         :a3, after a1, 17d
+    程式開發         :a4, after a2, 70d
+    安裝硬體         :a5, after a3, 10d
+    程式測試         :a6, after a4, 30d
+    撰寫使用手冊     :a7, after a5, 25d
+    轉換檔案         :a8, after a5, 20d
+    系統測試         :a9, after a6, 25d
+    使用者訓練       :a10, after a7 a8, 20d
+    使用者測試       :a11, after a9 a10, 25d
+```
+
+---
+## 3.關鍵路徑
+
+![PERT/CPM 圖](PERT.png "PERT/CPM 圖")
+> 「紅色方框」 → 關鍵路徑  
+
+- 關鍵路徑： 研擬計畫 → 任務分配 → 程式開發 → 程式測試 → 系統測試 → 使用者測試
+
+- 各段工期：1d + 4d + 70d + 30d + 25d + 25d
+
+- 總工期：155 天
