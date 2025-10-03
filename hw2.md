@@ -1,12 +1,12 @@
 ## 1.PERT/CPM 圖
 
-![PERT/CPM 圖](PERT.png"PERT.png")
+![PERT/CPM 圖](PERT.png)
 
 ---
 ## 2.甘特圖
 ```mermaid
 gantt
-    title 工作分解結構清單 (更新版)
+    title 工作分解結構清單 
     dateFormat  YYYY-MM-DD
     section 項目與說明
     研擬計畫           :a1, 2025-10-03, 1d
@@ -23,8 +23,7 @@ gantt
 ```
 ## 3.關鍵路徑
 
-![PERT/CPM 圖](PERT.png "PERT/CPM 圖")
-> 「紅色」 → 關鍵路徑  
+![PERT/CPM 圖](PERT.png "PERT/CPM 圖")  
 
 - 關鍵路徑： 研擬計畫 → 任務分配 → 程式開發 → 程式測試 → 系統測試 → 使用者測試
 
